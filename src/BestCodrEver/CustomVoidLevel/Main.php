@@ -35,7 +35,7 @@ class Main extends PluginBase implements Listener
   {
     if (!$sender instanceof Player) return true;
     if ($cmd->getName() !== "void") return true;
-    if (!$player->hasPermission("customvoidlevel.void")) return true;
+    if (!$sender->hasPermission("customvoidlevel.void")) return true;
     if (!isset($args[0])){
       $sender->sendMessage(TF::RED . "Usage: /void <y-level | reset>");
       return true;
