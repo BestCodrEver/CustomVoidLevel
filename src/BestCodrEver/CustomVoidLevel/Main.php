@@ -33,8 +33,8 @@ class Main extends PluginBase implements Listener
         function(int $currentTick){
           foreach ($commands as $command){
             if (is_null($command)) return;
-            
-            $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "");
+            $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
+            $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
           }
         }
       ), $config->get("payload.command-delay", 0));
