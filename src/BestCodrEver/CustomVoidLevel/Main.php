@@ -3,7 +3,7 @@
 namespace BestCodrEver\CustomVoidLevel;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\command\{ConsoleCommandSender, CommandSender};
+use pocketmine\command\{Command, ConsoleCommandSender, CommandSender};
 use pocketmine\scheduler\{ClosureTask, TaskScheduler};
 use pocketmine\event\{player\PlayerMoveEvent, Listener};
 use pocketmine\utils\{TextFormat as TF, Config};
@@ -20,10 +20,33 @@ class Main extends PluginBase implements Listener
     $this->config = $this->getConfig();
   }
   
+  public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
+  {
+    if (!$sender instanceof Player) return true;
+    if ($cmd->getName() !== "void") return true;
+    if (!$player->hasPermission("customvoidlevel.void")) return true;
+    if (!isset($args[0])){
+      $sender->sendMessage(TF::RED . "Usage: /void <y-level | reset>");
+      return true;
+    }
+    if (is_int($args[0]) && $args[0] >= -40 && $args[0] < 0){
+      $this->config->set("void-y-level", $args[0]);
+      $this->config->save();
+      $sender->sendMessage(TF::GREEN . "Successfully set the void level to {$args[0]}.");
+    }
+    if ($args[0] === "reset"){
+      $this->config->set("void-y-level", -40);
+      $this->config->save();
+      $sender->sendMessage(TF::GREEN . "Successfully reset the void level.");      
+    }
+    return true; 
+  }
+  
   public function onMove(PlayerMoveEvent $event): void
   {
     $player = $event->getPlayer();
     $playerY = $player->getY();
+    $this->config->reload();
     if ($this->config->get("void-y-level") < -40 || $this->config->get("void-y-level") > 0) return;
     if ($playerY !== $this->config->get("void-y-level")) return;
     if ($this->config->get("payload.command-enabled") === true){
