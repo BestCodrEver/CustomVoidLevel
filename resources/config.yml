@@ -9,3 +9,15 @@
 
 #Set the y-level for the void level (min = -40, eg. -20)
 void-y-level: -40
+
+#Payload (what should happen if player is at that y-level?)
+payload:
+
+ #Run a command when at the y-level
+ command-enabled: false
+ #If set to true above, the commands needed to run need to be listed below
+ commands:
+  - ""
+ 
+ #Kills the player at that y-level
+ kill-enabled: true
