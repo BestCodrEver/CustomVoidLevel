@@ -10,13 +10,11 @@ use pocketmine\{Player, Server};
 
 class Main extends PluginBase implements Listener
 {
-  //Config File
   public $config;
   
   public function onEnable(): void
   {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    //Save Config
     $this->saveResource("config.yml");
     $this->config = $plugin->getConfig();
   }
@@ -24,26 +22,20 @@ class Main extends PluginBase implements Listener
   public function onMove(PlayerMoveEvent $event): void
   {
     $player = $event->getPlayer();
-    //Get the player's Y-Level to check if it's in the void level
     $playerY = $player->getY();
-    //Return if player is not at void level
+    if ($config->get("void-y-level") < -40 || $config->get("void-y-level") > 0) return;
     if ($playerY !== $config->get("void-y-level")) return;
-    //Check if command payload is enabled in the config
     if ($config->get("payload.command-enabled") === true){
-      //If player kill is set to true, kill the player
       if ($config->get("payload.kill-enabled") === true) $player->kill();
-      //Get commands set in config
-      $commands = $config->get("payload.commands");
-      //Run commands
+      $commands = $config->get("payload.commands", []);
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
         function(int $currentTick){
           foreach ($commands as $command){
             if (is_null($command)) return;
-        
+            
           }
         }
-      ), 20);
-      
+      ), $config->get("payload.command-delay", 0));
     }
   }
 }
