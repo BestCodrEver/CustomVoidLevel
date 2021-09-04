@@ -25,6 +25,7 @@ class Main extends PluginBase implements Listener
     $player = $event->getPlayer();
     //Get the player's Y-Level to check if it's in the void level
     $playerY = $player->getY();
+    //Return if player is not at void level
     if ($playerY !== $config->get("void-y-level")) return;
   }
 }
