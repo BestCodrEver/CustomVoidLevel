@@ -27,5 +27,13 @@ class Main extends PluginBase implements Listener
     $playerY = $player->getY();
     //Return if player is not at void level
     if ($playerY !== $config->get("void-y-level")) return;
+    //Check if command payload is enabled in the config
+    if ($config->get("payload.command-enabled") === true){
+      $commands = $config->get("payload.commands");
+      foreach ($commands as $command){
+        if (is_null($command)) return;
+        
+      }
+    }
   }
 }
