@@ -15,7 +15,12 @@ payload:
 
  #Run a command when at the y-level
  command-enabled: false
+ #Delay after death to run command (in ticks)
+ command-delay: 40
  #If set to true above, the commands needed to run need to be listed below
+ #They will be run one by one in console
+ #To use the player's name in a command, use {player}
+ #Example: msg {player} Hello!
  commands:
   - ""
  
