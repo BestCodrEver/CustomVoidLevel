@@ -3,6 +3,7 @@
 namespace BestCodrEver\CustomVoidLevel;
 
 use pocketmine\plugin\PluginBase;
+use pocketmine\command\{ConsoleCommandSender, CommandSender};
 use pocketmine\scheduler\{ClosureTask, TaskScheduler};
 use pocketmine\event\{player\PlayerMoveEvent, Listener};
 use pocketmine\utils\{TextFormat as TF, Config};
@@ -33,6 +34,7 @@ class Main extends PluginBase implements Listener
           foreach ($commands as $command){
             if (is_null($command)) return;
             
+            $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "");
           }
         }
       ), $config->get("payload.command-delay", 0));
