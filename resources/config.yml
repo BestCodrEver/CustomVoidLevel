@@ -6,3 +6,6 @@
 #  \_____\__,_|___/\__\___/|_| |_| |_|\/ \___/|_|\__,_|______\___| \_/ \___|_|
 #
 #Configuration File
+
+#Set the y-level for the void level (min = -40, eg. -20)
+void-y-level: -40
