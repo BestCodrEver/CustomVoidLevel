@@ -1,5 +1,16 @@
 <?php
 
+/*
+  ____            _    _____          _      ______              
+ |  _ \          | |  / ____|        | |    |  ____|             
+ | |_) | ___  ___| |_| |     ___   __| |_ __| |____   _____ _ __ 
+ |  _ < / _ \/ __| __| |    / _ \ / _` | '__|  __\ \ / / _ \ '__|
+ | |_) |  __/\__ \ |_| |___| (_) | (_| | |  | |___\ V /  __/ |   
+ |____/ \___||___/\__|\_____\___/ \__,_|_|  |______\_/ \___|_|   
+This plugin was made by BestCodrEver.
+Discord: FaithlessMC#7013
+*/
+
 namespace BestCodrEver\CustomVoidLevel;
 
 use pocketmine\plugin\PluginBase;
