@@ -3,3 +3,12 @@ author: BestCodrEver
 main: BestCodrEver\CustomVoidLevel\Main;
 api: 3.0.0
 version: 1.0.0
+commands:
+ void:
+  description: "Set the void y-level!"
+  usage: /void <y-level | reset>
+  permission: customvoidlevel.void
+permissions:
+ customvoidlevel.void:
+  description: "Allows a player to run /void!"
+  default: true
