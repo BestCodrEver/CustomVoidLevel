@@ -17,7 +17,7 @@ class Main extends PluginBase implements Listener
   {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     $this->saveResource("config.yml");
-    $this->config = $plugin->getConfig();
+    $this->config = $this->getConfig();
   }
   
   public function onMove(PlayerMoveEvent $event): void
