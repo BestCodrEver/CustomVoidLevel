@@ -29,7 +29,11 @@ class Main extends PluginBase implements Listener
     if ($playerY !== $config->get("void-y-level")) return;
     //Check if command payload is enabled in the config
     if ($config->get("payload.command-enabled") === true){
+      //If player kill is set to true, kill the player
+      if ($config->get("payload.kill-enabled") === true) $player->kill();
+      //Get commands set in config
       $commands = $config->get("payload.commands");
+      //Run commands
       foreach ($commands as $command){
         if (is_null($command)) return;
         
