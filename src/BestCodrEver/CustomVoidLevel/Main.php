@@ -24,11 +24,11 @@ class Main extends PluginBase implements Listener
   {
     $player = $event->getPlayer();
     $playerY = $player->getY();
-    if ($config->get("void-y-level") < -40 || $config->get("void-y-level") > 0) return;
-    if ($playerY !== $config->get("void-y-level")) return;
-    if ($config->get("payload.command-enabled") === true){
-      if ($config->get("payload.kill-enabled") === true) $player->kill();
-      $commands = $config->get("payload.commands", []);
+    if ($this->config->get("void-y-level") < -40 || $this->config->get("void-y-level") > 0) return;
+    if ($playerY !== $this->config->get("void-y-level")) return;
+    if ($this->config->get("payload.command-enabled") === true){
+      if ($this->config->get("payload.kill-enabled") === true) $player->kill();
+      $commands = $this->config->get("payload.commands", []);
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
         function(int $currentTick){
           foreach ($commands as $command){
@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener
             $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
           }
         }
-      ), $config->get("payload.command-delay", 0));
+      ), $this->config->get("payload.command-delay", 0));
     }
   }
 }
