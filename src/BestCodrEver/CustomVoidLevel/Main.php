@@ -35,10 +35,15 @@ class Main extends PluginBase implements Listener
       //Get commands set in config
       $commands = $config->get("payload.commands");
       //Run commands
-      foreach ($commands as $command){
-        if (is_null($command)) return;
+      $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
+        function(int $currentTick){
+          foreach ($commands as $command){
+            if (is_null($command)) return;
         
-      }
+          }
+        }
+      ), 20);
+      
     }
   }
 }
