@@ -40,8 +40,9 @@ class Main extends PluginBase implements Listener
       $sender->sendMessage(TF::RED . "Usage: /void <y-level | reset>");
       return true;
     }
-    if (is_int($args[0]) && $args[0] >= -40 && $args[0] < 0){
-      $this->config->set("void-y-level", $args[0]);
+    $coord = (int)$args[0];
+    if ($coord >= -40 && $coord < 0){
+      $this->config->set("void-y-level", $coord);
       $this->config->save();
       $sender->sendMessage(TF::GREEN . "Successfully set the void level to {$args[0]}.");
     }
