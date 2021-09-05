@@ -68,7 +68,7 @@ class Main extends PluginBase implements Listener
         function(int $currentTick): void{
           foreach ($this->config->getNested("payload")["commands"] as $command){
             if (!is_null($command)){
-                $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
+                $formattedcommand = str_replace("{player}", "{$event->getPlayer()->getName()}", $command);
                 $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
             }
           }
