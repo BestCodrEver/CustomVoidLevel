@@ -1,12 +1,17 @@
-<img align="left" src="icon.png" width="250" height="250">
 <div align="center">
 <a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.state/CustomVoidLevel"></a>
 <a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.api/CustomVoidLevel"></a>
+</div><br/>
+<div align="center">
+<img src="icon.png" width="64" height="64">
 <h1 align="center">CustomVoidLevel</h1>
+</div>
+<div align="center">
 <p align="center">CustomVoidLevel is a plugin that sets a y-level to be the void (under y-level 0) and allows you to do things when a player is at that y-level (add a command to run in console etc). It also adds a /void command so you can easily change the void level in-game!</p>
 
 **Note: There can be some latency between the player falling to the y-level and the payload.**
 </div>
+<hr/>
 
 ## How to setup?
 
@@ -29,6 +34,5 @@
 
 Feel free to tell me [here](https://github.com/BestCodrEver/CustomVoidLevel/issues/new)!
 
-## For:
-
-This plugin was made with <3 by BestCodrEver for `! !Waltz <3#0505`
+<hr/>
+<p align="center">This plugin was made with ❤️ by BestCodrEver for ! !Waltz <3#0505</p>
