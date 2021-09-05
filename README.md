@@ -36,4 +36,4 @@
 Feel free to tell me [here](https://github.com/BestCodrEver/CustomVoidLevel/issues/new)!
 
 <hr/>
-<p align="center">This plugin was made with ❤️ by BestCodrEver for ! !Waltz <3#0505</p>
+<p align="center">This plugin was made with ❤️ by <a href="https://github.com/BestCodrEver">BestCodrEver</a> for ! !Waltz <3#0505</p>
