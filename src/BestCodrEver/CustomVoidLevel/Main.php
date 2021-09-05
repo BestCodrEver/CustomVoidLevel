@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener
       return true;
     }
     $coord = (int)$args[0];
-    if ($coord >= -40 && $coord < 0){
+    if ($coord >= -41 && $coord < 0){
       $this->config->set("void-y-level", $coord);
       $this->config->save();
       $sender->sendMessage(TF::GREEN . "Successfully set the void level to {$args[0]}.");
@@ -70,7 +70,7 @@ class Main extends PluginBase implements Listener
     $player = $event->getPlayer();
     $playerY = $player->getY();
     $this->config->reload();
-    if ($this->config->get("void-y-level") < -40 || $this->config->get("void-y-level") > 0) return;
+    if ($this->config->get("void-y-level") < -41 || $this->config->get("void-y-level") > 0) return;
     if ($playerY >= $this->config->get("void-y-level")) return;
     if ($this->config->get("payload")["kill-enabled"] === true) $player->kill();
     if ($this->config->get("payload")["command-enabled"] === true){
