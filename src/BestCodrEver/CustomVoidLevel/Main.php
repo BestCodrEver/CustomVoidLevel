@@ -24,6 +24,7 @@ use pocketmine\{Player, Server};
 class Main extends PluginBase implements Listener
 {
   public $config;
+  public $player;
   
   public function onEnable()
   {
@@ -64,11 +65,12 @@ class Main extends PluginBase implements Listener
     if ($playerY >= $this->config->get("void-y-level")) return;
     if ($this->config->get("payload")["kill-enabled"] === true) $player->kill();
     if ($this->config->get("payload")["command-enabled"] === true){
+      $this->player = $player;
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
         function(int $currentTick): void{
           foreach ($this->config->getNested("payload")["commands"] as $command){
             if (!is_null($command)){
-                $formattedcommand = str_replace("{player}", "{$event->getPlayer()->getName()}", $command);
+                $formattedcommand = str_replace("{player}", "{$this->player->getName()}", $command);
                 $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
             }
           }
