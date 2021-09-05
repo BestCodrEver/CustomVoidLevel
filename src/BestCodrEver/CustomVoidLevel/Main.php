@@ -17,7 +17,7 @@ namespace BestCodrEver\CustomVoidLevel;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\{Command, ConsoleCommandSender, CommandSender};
 use pocketmine\scheduler\{ClosureTask, TaskScheduler};
-use pocketmine\event\{player\PlayerMoveEvent, Listener};
+use pocketmine\event\{player\PlayerMoveEvent, entity\EntityDamageEvent, Listener};
 use pocketmine\utils\{TextFormat as TF, Config};
 use pocketmine\{Player, Server};
 
@@ -54,6 +54,14 @@ class Main extends PluginBase implements Listener
       $sender->sendMessage(TF::GREEN . "Successfully reset the void level.");      
     }
     return true; 
+  }
+  
+  public function onDamage(EntityDamageEvent $event)
+  {
+    $entity = $event->getEntity();
+    if(!$entity instanceof Player) return;
+    if ($entity->getY() >= 0) return;
+    $event->setCancelled();
   }
   
   public function onMove(PlayerMoveEvent $event)
