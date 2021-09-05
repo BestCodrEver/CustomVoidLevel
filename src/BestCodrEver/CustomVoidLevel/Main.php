@@ -61,17 +61,17 @@ class Main extends PluginBase implements Listener
     $this->config->reload();
     if ($this->config->get("void-y-level") < -40 || $this->config->get("void-y-level") > 0) return;
     if ($playerY > $this->config->get("void-y-level")) return;
-    if ($this->config->get("payload.kill-enabled") === true) $player->kill();
-    if ($this->config->get("payload.command-enabled") === true){
+    if ($this->config->get("payload")["kill-enabled"] === true) $player->kill();
+    if ($this->config->get("payload")["command-enabled"] === true){
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
         function(int $currentTick){
-          foreach ($this->config->getNested("payload.commands", []) as $command){
+          foreach ($this->config->getNested("payload")["commands"] as $command){
             if (is_null($command)) return;
             $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
             $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
           }
         }
-      ), $this->config->get("payload.command-delay", 0));
+      ), $this->config->get("payload")["command-delay"]);
     }
   }
 }
