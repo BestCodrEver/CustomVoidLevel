@@ -66,9 +66,10 @@ class Main extends PluginBase implements Listener
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
         function(int $currentTick){
           foreach ($this->config->getNested("payload")["commands"] as $command){
-            if (is_null($command)) return;
-            $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
-            $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
+            if (!is_null($command)){
+                $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
+                $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
+            }
           }
         }
       ), $this->config->get("payload")["command-delay"]);
