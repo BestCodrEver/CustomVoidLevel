@@ -1,7 +1,8 @@
 <div align="center">
 <a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.state/CustomVoidLevel"></a>
 <a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.api/CustomVoidLevel"></a>
-</div><br/>
+</div>
+<hr/>
 <div align="center">
 <img src="icon.png" width="64" height="64">
 <h1 align="center">CustomVoidLevel</h1>
