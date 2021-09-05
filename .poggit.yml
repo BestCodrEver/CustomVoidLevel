@@ -6,7 +6,4 @@ projects:
   CustomVoidLevel:
     path: ""
     icon: "icon.png"
-    excludeFiles:
-     - "README.md"
-     - "LICENSE"
 ...
