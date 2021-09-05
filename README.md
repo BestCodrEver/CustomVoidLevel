@@ -1,6 +1,6 @@
 [![](https://poggit.pmmp.io/shield.state/CustomVoidLevel)](https://poggit.pmmp.io/p/CustomVoidLevel)
 [![](https://poggit.pmmp.io/shield.api/CustomVoidLevel)](https://poggit.pmmp.io/p/CustomVoidLevel)
-
+<img align="right" src="icon.png" width="250" height="250">
 # CustomVoidLevel
 CustomVoidLevel is a plugin that sets a y-level to be the void (under y-level 0) and allows you to do things when a player is at that y-level (add a command to run in console etc). It also adds a /void command so you can easily change the void level in-game!
 
