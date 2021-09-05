@@ -65,7 +65,7 @@ class Main extends PluginBase implements Listener
     if ($this->config->get("payload")["kill-enabled"] === true) $player->kill();
     if ($this->config->get("payload")["command-enabled"] === true){
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
-        function(int $currentTick){
+        function(int $currentTick): void{
           foreach ($this->config->getNested("payload")["commands"] as $command){
             if (!is_null($command)){
                 $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
