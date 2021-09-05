@@ -60,7 +60,7 @@ class Main extends PluginBase implements Listener
     $playerY = $player->getY();
     $this->config->reload();
     if ($this->config->get("void-y-level") < -40 || $this->config->get("void-y-level") > 0) return;
-    if ($playerY !== $this->config->get("void-y-level")) return;
+    if ($playerY > $this->config->get("void-y-level")) return;
     if ($this->config->get("payload.kill-enabled") === true) $player->kill();
     if ($this->config->get("payload.command-enabled") === true){
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
