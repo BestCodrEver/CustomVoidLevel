@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener
 {
   public $config;
   
-  public function onEnable(): void
+  public function onEnable()
   {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     $this->saveResource("config.yml");
@@ -54,7 +54,7 @@ class Main extends PluginBase implements Listener
     return true; 
   }
   
-  public function onMove(PlayerMoveEvent $event): void
+  public function onMove(PlayerMoveEvent $event)
   {
     $player = $event->getPlayer();
     $playerY = $player->getY();
