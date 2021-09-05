@@ -8,7 +8,7 @@ Note: There can be some latency between the player falling to the y-level and th
 
 ## How to setup?
 
-1. Download the .phar file.
+1. Download the `CustomVoidLevel.phar` file.
 2. Drop the plugin file into your server’s plugins folder.
 3. Start the server.
 4. Configure the config to your hearts content.
