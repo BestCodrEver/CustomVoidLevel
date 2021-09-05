@@ -63,10 +63,9 @@ class Main extends PluginBase implements Listener
     if ($playerY !== $this->config->get("void-y-level")) return;
     if ($this->config->get("payload.command-enabled") === true){
       if ($this->config->get("payload.kill-enabled") === true) $player->kill();
-      $commands = $this->config->get("payload.commands", []);
       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(
         function(int $currentTick){
-          foreach ($commands as $command){
+          foreach ($this->config->get("payload.commands", []) as $command){
             if (is_null($command)) return;
             $formattedcommand = str_replace("{player}", "{$player->getName()}", $command);
             $this->getServer()->dispatchCommand(new ConsoleCommandSender(), "$formattedcommand");
