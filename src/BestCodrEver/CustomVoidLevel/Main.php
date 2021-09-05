@@ -61,6 +61,7 @@ class Main extends PluginBase implements Listener
     $entity = $event->getEntity();
     if(!$entity instanceof Player) return;
     if ($entity->getY() >= 0) return;
+    if($event->getCause() !== EntityDamageEvent::CAUSE_VOID) return;
     $event->setCancelled();
   }
   
