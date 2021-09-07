@@ -1,6 +1,9 @@
 <div align="center">
 <a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.state/CustomVoidLevel"></a>
 <a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.api/CustomVoidLevel"></a>
+<a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.dl.total/CustomVoidLevel"></a>
+<a href="https://poggit.pmmp.io/p/CustomVoidLevel"><img src="https://poggit.pmmp.io/shield.dl/CustomVoidLevel"></a>
+
 </div>
 <hr/>
 <div align="center">
